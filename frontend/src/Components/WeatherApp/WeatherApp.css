@@ -1,6 +1,6 @@
 .container {
-  width: 607px;
-  height: 829px;
+  width: 1100px;
+  height: 1000px;
   margin: auto;
   margin-top: 75px;
   border-radius: 12px;
@@ -86,4 +86,34 @@
 
 .icon {
   margin-top: 10px;
+}
+
+.container-call-card {
+  display: flex;
+  justify-content: center; /* ou use justify-content: space-around; dependendo do espaçamento desejado */
+  flex-wrap: wrap; /* permite que os elementos quebrem para a próxima linha se necessário */
+}
+
+.error-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffcccc;
+  padding: 20px;
+  border: 1px solid #ff3333;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-align: center;
+}
+
+.error-popup button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
