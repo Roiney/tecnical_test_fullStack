@@ -52,6 +52,7 @@ export class WeatherService {
           sunset: city.sunset.toString(),
         },
       });
+
       return recordInformationCity;
     } catch (error: any) {
       throw new BadRequestException(error.message);
@@ -86,6 +87,7 @@ export class WeatherService {
           visibility: list.visibility,
         },
       });
+
       return recostForecastEntry;
     } catch (error: any) {
       throw new BadRequestException(error.message);
@@ -114,6 +116,7 @@ export class WeatherService {
   async callAndRecordData(city: string): Promise<any> {
     try {
       const apiResponde = await this.callApiOpenweathermap(city);
+      console.dir(apiResponde, { dephl: null });
       if (apiResponde) {
       }
       const cityInformation = await this.recordCityInformation(
