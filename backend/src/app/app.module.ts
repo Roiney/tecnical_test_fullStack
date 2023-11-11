@@ -4,14 +4,14 @@ import { PrismaModule } from 'nestjs-prisma';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HealthModule } from './modules/health/health.module';
-import { UserModule } from './modules/user/user.module';
+import { WeatherModule } from './modules/weather/weather.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     PrismaModule.forRoot({ isGlobal: true }),
     HealthModule,
-    UserModule,
+    WeatherModule,
   ],
   controllers: [AppController],
   providers: [AppService],

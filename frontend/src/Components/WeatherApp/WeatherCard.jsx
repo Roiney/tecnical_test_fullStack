@@ -7,7 +7,9 @@ import snow_icon from "../Assets/snow.png";
 import "./WeatherCard.css";
 
 function WeatherCard(props) {
+  console.log(props);
   const [wicon, setWicon] = useState(cloud_icon);
+  const [dayOfWeek, setDayOfWeek] = useState("");
 
   useEffect(() => {
     switch (props.icon.slice(0, 2)) {
@@ -35,13 +37,19 @@ function WeatherCard(props) {
       default:
         setWicon(clear_icon);
     }
-  }, [props.icon]);
+    console.log(props.dt_txt);
+    const date = new Date(props.dt_txt);
+    console.log(date);
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    setDayOfWeek(daysOfWeek[date.getDay()]);
+  }, [props.icon, props.dt_txt]);
 
   return (
     <div className="container-card">
       <div className="weather-image-card">
         <img src={wicon} alt="" />
       </div>
+      <div className="day-of-week">{dayOfWeek}</div>
       <div className="weather-temp-card">{props.temperature}</div>
       <div className="data-container-card">
         <div className="element-card">

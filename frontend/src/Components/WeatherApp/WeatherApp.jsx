@@ -17,7 +17,6 @@ const WeatherApp = () => {
     setShowErrorPopup(false);
   };
 
-  let api_key = "5360521dc8ec19a86dd1e2be339825c0";
   const [weatherData, setWeatherData] = useState({
     humidity: "64%",
     windSpeed: "18 km/h",
@@ -33,19 +32,21 @@ const WeatherApp = () => {
     if (element[0].value === "") {
       return 0;
     }
-    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${element[0].value}&units=Metric&cnt=5&appid=${api_key}`;
+    let url = `http://127.0.0.1:4000/weather/${element[0].value}`;
     let response = await fetch(url);
     if (response.status === 200) {
       let data = await response.json();
-      setWeatherDataFull(data.list);
+
+      setWeatherDataFull(data.weather_data);
       setWeatherData({
-        humidity: `${data.list[0].main.humidity}%`,
-        windSpeed: `${data.list[0].wind.speed} km/h`,
-        temperature: `${data.list[0].main.temp}°C`,
-        location: data.city.name,
+        humidity: `${data.weather_data[0].humidity}%`,
+        windSpeed: `${data.weather_data[0].wind_speed} km/h`,
+        temperature: `${data.weather_data[0].temp}°C`,
+        location: data.name,
       });
 
-      const iconPrefix = data.list[0].weather[0].icon.slice(0, 2);
+      const iconPrefix = data.weather_data[0].weather_types[0].icon.slice(0, 2);
+
       switch (iconPrefix) {
         case "01":
           setWicon(clear_icon);
@@ -112,18 +113,20 @@ const WeatherApp = () => {
       </div>
       <div className="container-call-card">
         {weatherDataFull &&
-          weatherDataFull.map(
-            (data, index) =>
+          weatherDataFull.map((data, index) => {
+            return (
               index !== 0 && (
                 <WeatherCard
                   key={index}
-                  icon={`${data.weather[0].icon}%`}
-                  humidity={`${data.main.humidity}%`}
-                  windSpeed={`${data.wind.speed} km/h`}
-                  temperature={`${data.main.temp}°C`}
+                  icon={`${data.weather_types[0].icon}%`}
+                  humidity={`${data.humidity}%`}
+                  windSpeed={`${data.wind_speed} km/h`}
+                  temperature={`${data.temp}°C`}
+                  dt_txt={data.dt_txt}
                 />
               )
-          )}
+            );
+          })}
       </div>
       {showErrorPopup && (
         <div className="error-popup">
