@@ -1,5 +1,3 @@
-<body>
-
   <h1>Projeto Previsão do Tempo</h1>
 
     <h2>Teste para Desenvolvedor Full Stack</h2>
@@ -55,6 +53,3 @@
 
     <p><strong>Hospedagem:</strong></p>
     <p>O projeto está hospedado em <a href="http://18.221.190.16:3000/" target="_blank" rel="noopener noreferrer">http://18.221.190.16:3000/</a>.</p>
-
-</body>
-</html>
