@@ -2,20 +2,19 @@
 
   <h1>Projeto Previsão do Tempo</h1>
 
-  <section>
     <h2>Teste para Desenvolvedor Full Stack</h2>
 
     <p>Este projeto consiste no desenvolvimento de uma solução para previsões meteorológicas, utilizando NodeJS (com o framework NestJS) para o backend, ReactJS para o frontend e Prisma como ORM. O banco de dados utilizado é o MySQL.</p>
 
-  </section>
 
-  <section>
+
+
     <h3>Caso de Uso</h3>
-  
-    <p>O site <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap API</a> fornece APIs para previsões meteorológicas e informações climáticas. O objetivo é criar um ambiente online que permita visualizar o clima da região do usuário, fornecendo informações para os próximos 5 dias. Além disso, o usuário pode consultar informações de outras cidades.</p>
-  </section>
 
-  <section>
+    <p>O site <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap API</a> fornece APIs para previsões meteorológicas e informações climáticas. O objetivo é criar um ambiente online que permita visualizar o clima da região do usuário, fornecendo informações para os próximos 5 dias. Além disso, o usuário pode consultar informações de outras cidades.</p>
+
+
+
     <h3>Diretrizes Gerais</h3>
 
     <ol>
@@ -30,9 +29,9 @@
       </li>
     </ol>
 
-  </section>
 
-  <section>
+
+
     <h3>Instruções para Execução</h3>
 
     <p><strong>Backend (NestJS):</strong></p>
@@ -56,8 +55,6 @@
 
     <p><strong>Hospedagem:</strong></p>
     <p>O projeto está hospedado em <a href="http://18.221.190.16:3000/" target="_blank" rel="noopener noreferrer">http://18.221.190.16:3000/</a>.</p>
-
-  </section>
 
 </body>
 </html>
