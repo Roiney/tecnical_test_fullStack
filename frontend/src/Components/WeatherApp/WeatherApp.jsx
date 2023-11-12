@@ -33,10 +33,10 @@ const WeatherApp = () => {
       return 0;
     }
     let url = `http://127.0.0.1:4000/weather/${element[0].value}`;
+    // let url = `http://18.221.190.16:4000/weather/${element[0].value}`;
     let response = await fetch(url);
     if (response.status === 200) {
       let data = await response.json();
-
       setWeatherDataFull(data.weather_data);
       setWeatherData({
         humidity: `${data.weather_data[0].humidity}%`,
